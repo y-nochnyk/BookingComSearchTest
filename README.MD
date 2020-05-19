@@ -3,8 +3,8 @@ End-to-end tests performed for: https://www.booking.com/
 ## Prerequisites
 * **JDK version >= 11.0.1**
 * **Apache Maven version >= 3.6.0**
-* **Google Chrome version <= 81.0**
-* **FireFox Mozilla version <= 76.0**
+* **Google Chrome version >= 81.0**
+* **FireFox Mozilla version >= 76.0**
 ## Task:
 Implement​ ​a​ ​test​ ​suite​ ​that​ ​does​ ​a​ ​single​ ​test: 
 1. It​ ​should​ ​go​ ​to​ ​the​ ​https://www.booking.com​ ​page 
