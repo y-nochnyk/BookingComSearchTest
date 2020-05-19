@@ -1,31 +1,22 @@
 # BookingComSearchTest
-Search functionality tests performed for website: https://www.booking.com/
+End-to-end tests performed for: https://www.booking.com/
 ## Prerequisites
 * **JDK version >= 11.0.1**
 * **Apache Maven version >= 3.6.0**
-* **Google Chrome version <= 78.0**
-* **FireFox Mozilla version <= 70.0**
-* **Internet Explorer version <= 11.0**
-## Project structure
-* [src/main/resources/Info.txt](https://github.com/y-nochnyk/BookingComSearchTest/blob/master/src/main/resources/Info.txt) - detailed information about all the tests
-* [src/main/java/Page.java](https://github.com/y-nochnyk/BookingComSearchTest/blob/master/src/main/java/Page.java) - the class describing all the elements of the website and the methods used for all the tests
-* [src/test/java/BookingTest.java](https://github.com/y-nochnyk/BookingComSearchTest/blob/master/src/test/java/BookingTest.java) - all the tests, which may be performed for each of three (Chrome, FireFox, Internet Explorer) browsers using TestNG
+* **Google Chrome version <= 81.0**
+* **FireFox Mozilla version <= 76.0**
+## Task:
+Implement​ ​a​ ​test​ ​suite​ ​that​ ​does​ ​a​ ​single​ ​test: 
+1. It​ ​should​ ​go​ ​to​ ​the​ ​https://www.booking.com​ ​page 
+2. Fill​ ​in​ ​the​ ​form​ ​with​ ​values: Destination​:​ ​“New​ ​York” Check-in​:​ ​<current​ ​date> Check-out​:​ ​<current​ ​date​ ​+​ ​7​ ​days> And​ ​submit​ ​the​ ​search​ ​form. 
+3. On​ ​the​ ​search​ ​results​ ​page,​ ​it​ ​should​ ​check​ ​whether​ ​there​ ​is​ ​at​ ​least​ ​1​ ​result​ ​and​ ​all results​ ​are​ ​from​ ​New​ ​York​ ​(it​ ​should​ ​contain​ ​“New​ ​York”​ ​in​ ​the​ ​location​ ​text).
+4. Browsers: Chrome, Firefox. 
 ## Run 
-* **To run tests for Chrome:**
-<br>Uncomment line 36 in the file BookingTest.java.
-<br>Make sure lines 37 and 38 are commented. Then open terminal and use: 
+* **To run tests for Chrome via terminal use:**
 ```
-mvn test
+mvn test -Dbrowser=chrome
 ```
-* **To run tests for Firefox:**
-<br>Uncomment line 37 in the file BookingTest.java.
-<br>Make sure lines 36 and 38 are commented. Then open terminal and use:
+* **To run tests for Firefox via terminal use:**
 ```
-mvn test
-```
-* **To run tests for Internet Explorer:**
-<br>Uncomment line 38 in the file BookingTest.java.
-<br>Make sure lines 36 and 37 are commented. Then open terminal and use:
-```
-mvn test
+mvn test -Dbrowser=firefox
 ```
