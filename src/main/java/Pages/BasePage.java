@@ -10,9 +10,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class BasePage extends PageObject {
+
     private WebDriverWait wait;
-
-
 
     @FindBy(id = "ss")
     private WebElement destinationField;
