@@ -13,43 +13,42 @@ public class BookingTest extends TestStarter {
     @Test(priority = 1)
     public void navigateToBasePageTest() {
 
-        //Navigating to the base page
         driver.get(TestData.BASE_PAGE_URL);
 
         //Getting base page title
         String actualPageTitle = driver.getTitle();
 
         //Checking if actual page title is equal to the expected
-        assertTrue(actualPageTitle.contains("Booking.com"));
+        assertTrue(actualPageTitle.contains("Booking.com"), "ACTUAL BASE PAGE TITLE IS NOT VALID!");
     }
 
     @Test(priority = 2)
     public void selectDestinationAndDate(){
 
-        // Filling the search form with the city name "New York"
         basePage.fillDestinationField(TestData.CITY_NAME);
 
-        // Clicking on the date picker element
         basePage.clickTheDatePicker();
 
-        // Picking the 'current' date on the calendar
         basePage.pickTheDate(TestData.currentDate);
 
-        // Picking the 'current + 7 days' date on the calendar
         basePage.pickTheDate(TestData.currentPlusSeven);
 
-        // Clicking submit button
         basePage.clickSubmitButton();
+
+        // Checking if the destination header element of the results page contains 'New York'
+        String actualDestinationHeader = searchResultsPage.getDestinationHeader().getText();
+        assertTrue(actualDestinationHeader.contains(TestData.CITY_NAME), "DESTINATION HEADER INFO IS NOT VALID");
     }
 
     @Test(priority = 3)
     public void checkSearchResults(){
-        //The 'search results location elements with the same 'XPath' locators are stored in List
+        // The 'search results location elements with the same 'XPath' locators are stored in List
         List<WebElement> locationList = searchResultsPage.getSearchResultsLocationList();
 
-        //Checking if there's at least one search result with location 'New York'
+        // Checking if there's at least one search result with location 'New York'
         for (WebElement location: locationList){
-            assertTrue(location.getText().contains(TestData.CITY_NAME) && locationList.size() >= 1);
+            assertTrue(location.getText().contains(TestData.CITY_NAME)
+                    && locationList.size() >= 1, "LOCATION OR AMOUNT OF RESULTS AT THE RESULTS PAGE IS NOT VALID");
         }
     }
 }
