@@ -1,4 +1,4 @@
-# BookingComSearchTest
+# BookingComTest
 End-to-end tests performed for: https://www.booking.com/
 ## Prerequisites
 * **JDK version >= 11.0.1**
